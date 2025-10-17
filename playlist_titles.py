@@ -10,8 +10,8 @@ def extract_playlist_titles(playlist_url, output_file='videos.txt'):
     output_file (str): The name of the output text file.
     """
     ydl_opts = {
-        'extract_flat': True,  # Only extract info, no download
-        'quiet': True,         # Suppress output
+        'extract_flat': True,  
+        'quiet': True,         
     }
     
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -24,7 +24,6 @@ def extract_playlist_titles(playlist_url, output_file='videos.txt'):
                     if entry and 'title' in entry:
                         titles.append(entry['title'])
             
-            # Write titles to file
             with open(output_file, 'w', encoding='utf-8') as f:
                 for title in titles:
                     f.write(title + '\n')
@@ -34,7 +33,6 @@ def extract_playlist_titles(playlist_url, output_file='videos.txt'):
         except Exception as e:
             print(f"Error: {e}")
 
-# Usage:
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         url = sys.argv[1]
