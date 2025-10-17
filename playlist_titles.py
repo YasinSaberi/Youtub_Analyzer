@@ -1,6 +1,3 @@
-# First, install the required library:
-# pip install yt-dlp
-
 import yt_dlp
 import sys
 
